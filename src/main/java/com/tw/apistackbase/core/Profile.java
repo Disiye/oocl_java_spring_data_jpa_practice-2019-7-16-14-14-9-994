@@ -1,16 +1,20 @@
 package com.tw.apistackbase.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "COMPANY_PROFILE")
 public class Profile {
 
+    public Profile() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
-
 
     @Column(name = "REGISTERED_CAPITAL")
     private int registeredCapital;

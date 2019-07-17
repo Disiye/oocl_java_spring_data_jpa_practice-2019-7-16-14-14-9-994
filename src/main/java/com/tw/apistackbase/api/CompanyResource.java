@@ -34,8 +34,9 @@ public class CompanyResource {
     }
 
     @PostMapping()
-    public Company addCompany(@RequestBody Company company) {
-        companyRepository.save(company);
+    public Company addCompany(@RequestBody Company company){
+        companyRepository.saveAndFlush(company);
         return companyRepository.findById(company.getId()).get();
     }
+
 }
